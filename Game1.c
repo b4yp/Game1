@@ -18,15 +18,14 @@ int main()
 
     // printf("Door: %i\n", door); // Debug statement from when numbers weren't generating randomly for some reason.
     printf("Welcome to the game of your life!\n");
-    printf("There are two ominous doors in front of you, Door 1 and Door 2. Which do you open? ");
+    printf("There are two ominous doors in front of you, Door 1 and Door 2. \nWhich do you open? ");
     scanf(" %[^\n]", response);
     choice = atoi(response); // response is a string and that is bad. This will make it a number!
     if (choice == door) {
-    printf("You have won!");
+    printf("You have escaped!\n");
     } else {
-    printf("You have failed!");
+    printf("You are dead!\n");
     }
-
 
     return 0;
 }
