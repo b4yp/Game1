@@ -3,23 +3,25 @@ _TITLE "Game 1 - The Game of Your Life"
 ' * GAME1 -- THE GAME OF YOUR LIFE *
 ' **********************************
 ' Epic Text Adventure Game
+' Coded by @b4yp
 ' (c) 198x KB and SB
 ' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 '
-' *************************************
-' v1.0 - QB64 Version, First Draft, KEC
-' *************************************
+' **************************************
+' v1.0  - QB64 Version, First Draft, KEC
+' v1.01 - Fixed Door Set Verbiage, KEC
+' **************************************
 '
 ' ToDo: Figure out sound, for Game1 Classic Sont
 '
 ' * Output Text *
 Title1$ = "** GAME 1 -- THE GAME OF YOUR LIFE **"
-Title2$ = "** (c) 198x KB and SB, v1.0        **"
+Title2$ = "** (c) 198x KB and SB, v1.01       **"
 
 Game1$ = "You see two doors in front of you."
 Game2$ = "You must pick one to go through."
-Game3$ = "Total Doors: "
-Game4$ = "Doors Left to Escape: "
+Game3$ = "Total Door Sets: "
+Game4$ = "Door Sets Left to Escape: "
 
 Result1$ = "YOU ARE DEAD!!!"
 Result2$ = "ON TO THE NEXT SET OF DOORS!!!"

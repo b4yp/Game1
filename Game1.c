@@ -1,4 +1,4 @@
-// Game1 in C, written sometime in 2017.
+// Game1 in C, written sometime in 2017. Coded by @astrosteve.
 // Should compile on Windows, may not on Linux/Mac because of atoi()
 // I should probably just use an integer from the start and eliminate atoi() entirely
 // But I wrote this three years ago and don't feel like modifying it right now, so it stays.

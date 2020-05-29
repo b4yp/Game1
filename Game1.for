@@ -1,11 +1,13 @@
 C      /************************************************************/
 C      /* Game 1 - The Game of Your Life                           */
 C      /* Epic Text Adventure Game                                 */
+C      /* Coded by @b4yp                                           */
 C      /* (c)198x, KB and SB                                       */
 C      /* -------------------------------------------------------- */
 C      /* v1.0  - First Version - no sound                         */
 C      /* v1.01 - Changed to have random number of doors rather    */
 C      /*         than a hard-coded 50.                            */
+C      /* v1.02 - Fixed x of y verbiage.                           */
 C      /************************************************************/
 C
 C      /**************************************/
@@ -26,11 +28,12 @@ C      /* I/O Format Statements*/
 80     FORMAT(A1)
 
 100    FORMAT('** GAME 1 -- THE GAME OF YOUR LIFE **')
-110    FORMAT('** (c)198x, KB and SB, v1.01f      **')
+110    FORMAT('** (c)198x, KB and SB, v1.02f      **')
 
-200    FORMAT('You see two doors in front of you.')
+200    FORMAT('You see two ominous doors in front of you.')
 210    FORMAT('You must pick one to go through.')
-220    FORMAT('There are ',I2.2,' doors of ',I2.2,' left to escape!')
+220    FORMAT('There are ',I2.2,' door sets of ',
+     +         I2.2,' left to escape!')
 230    FORMAT('Pick one (1 or 2): ')
 
 300    FORMAT('YOU ARE DEAD!!!')
