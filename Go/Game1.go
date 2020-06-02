@@ -8,13 +8,17 @@
 /* v1.01 - Broke out youaredead into */
 /*         its own package because   */
 /*         learning.                 */
+/* v1.02 - Broke out getrandom to    */
+/*         use as a test for another */
+/*         routine. Wanted to see if */
+/*         it actually worked.       */
 /*************************************/
 
 package main
 
 import ( // Import various standard Go packages.
 	"fmt"        // Text formatting and basic i/o.
-	"math/rand"  // Random number features.
+	"randomness" // Custom Package to generate random number.
 	"time"       // Time stuff (for random number seeding).
 	"youaredead" // Custom Package "youaredead".
 )
@@ -29,9 +33,9 @@ func main() {
 	// Process Menu Selection and Play Game or Exit
 	switch {
 	case gamesel == 1: // Case 1. Play the game.
-		doors := getrandom(50) // Get random number of door sets.
-		doorsleft := doors     // Initialize "doors left" to total doors.
-		for doorsleft > 0 {    // Loop while there are non-zero amount of doors.
+		doors := randomness.GetRandom(50) // Get random number of door sets.
+		doorsleft := doors                // Initialize "doors left" to total doors.
+		for doorsleft > 0 {               // Loop while there are non-zero amount of doors.
 			doorsleft = opendoors(doorsleft, doors) // Call routine to open doors.
 		}
 	case gamesel == 2: // Case 2. "Quit the game." -- Bad end.
@@ -57,7 +61,7 @@ func titleprint() {
 
 	fmt.Println()
 	fmt.Println("Game 1 -- The Game of Your Life")
-	fmt.Println("(c)198x, KB and SB, v1.01g")
+	fmt.Println("(c)198x, KB and SB, v1.02g")
 	fmt.Println()
 }
 
@@ -84,7 +88,7 @@ func opendoors(doorcount int, totaldoors int) int { // Let's go through some doo
 	fmt.Printf("Pick one (1 or 2): ")
 	fmt.Scan(&selection) // Scan for integer selection.
 
-	deathdoor := getrandom(2) // Pick which door will dead-ify you.
+	deathdoor := randomness.GetRandom(2) // Pick which door will dead-ify you.
 
 	switch {
 	case selection < 1 || selection > 2: // Case 1. Invalid selection. Bad end.
@@ -114,16 +118,4 @@ func opendoors(doorcount int, totaldoors int) int { // Let's go through some doo
 	}
 
 	return doorcount - 1 // Subtract 1 to get remaining door sets to pass back.
-}
-
-func getrandom(rollamt int) int {
-	// General purpose, reusable, integer random number generator.
-	// rand.Intn(int) returns a value between 0 and n, so add 1 to return.
-	var randnum int
-	rand.Seed(time.Now().UnixNano()) // Use Unix-formatted time for random seed.
-
-	randnum = rand.Intn(rollamt) // Get random number (integer).
-	randnum = randnum + 1        // Add "1" to random number, since it starts at "0".
-
-	return randnum // Here's your random number. Enjoy that!
 }
